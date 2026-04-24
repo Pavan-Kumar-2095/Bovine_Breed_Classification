@@ -23,23 +23,7 @@ https://github.com/user-attachments/assets/7173789d-831e-47a7-b3dd-0492705ea2ae
 
 ---
 
-# 🧠 System Architecture
 
-User Uploads Image  
-↓  
-React Frontend (Breed_Predictor.js)  
-↓  
-FastAPI Backend (Server.py)  
-↓  
-MobileNetV2 → Cow vs Buffalo Classification  
-↓  
-EfficientNetB0 → Breed Classification  
-↓  
-Gemini API → Veterinary AI Summary  
-↓  
-Response Returned to UI  
-
----
 
 # 🧬 Model Training
 
@@ -157,34 +141,6 @@ Optimized for Indian agriculture use cases.
 
 ---
 
-# ⚡ End-to-End Flow
-
-Image Upload  
-↓  
-React Frontend  
-↓  
-FastAPI Backend  
-↓  
-MobileNetV2 → Cow/Buffalo  
-↓  
-EfficientNetB0 → Breed  
-↓  
-Gemini API → AI Summary  
-↓  
-Final Output Displayed  
-
----
-
-# 🚀 Key Highlights
-
-- Two-stage deep learning pipeline  
-- Transfer learning + fine-tuning  
-- Generative AI integration (Gemini)  
-- Agriculture-focused AI system  
-- Real-time inference  
-- Full-stack deployment  
-
----
 
 # 🌍 Real-World Impact
 
