@@ -237,7 +237,7 @@ GEMINI_API_KEY=your_api_key_here
 ```
 # Run backend server
 ```bash
-python Server.py<br>
+python Server.py
 ```
 
 or <br> 
