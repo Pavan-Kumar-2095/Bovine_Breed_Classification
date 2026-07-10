@@ -1,158 +1,203 @@
-# 🌾🐄🐃 AI-Powered Cow & Buffalo Breed Detection System
+# AI-Powered Cow & Buffalo Breed Detection System
 
-A full-stack AI system that detects whether an image contains a cow or buffalo, predicts the exact breed, and generates AI-powered veterinary insights using Deep Learning + Generative AI.
+A full-stack AI application that detects whether an uploaded image contains a **cow** or **buffalo**, predicts its breed, and generates AI-powered veterinary insights using Deep Learning and Generative AI.
 
-Built using:
-- 🧠 TensorFlow (MobileNetV2 + EfficientNetB0)
-- 🤖 Google Gemini API (Generative AI)
-- ⚡ FastAPI (Python Backend)
-- 🎨 React.js (Frontend)
+## Technologies Used
+
+- TensorFlow (MobileNetV2 & EfficientNetB0)
+- Google Gemini API
+- FastAPI
+- React.js
 
 ---
-## 🎥 Demo Video
+
+## Demo Video
 
 https://github.com/user-attachments/assets/7173789d-831e-47a7-b3dd-0492705ea2ae
 
-# 🚀 What This Project Does
+---
 
-1️⃣ Upload an image of livestock  
-2️⃣ Detect whether it is a Cow or Buffalo  
-3️⃣ Predict the exact breed  
-4️⃣ Show confidence scores  
-5️⃣ Generate AI veterinary summary (diet, vaccines, care tips)
+# Project Overview
+
+The application performs the following steps:
+
+1. Upload an image of livestock.
+2. Detect whether the animal is a cow or buffalo.
+3. Predict the corresponding breed.
+4. Display confidence scores.
+5. Generate AI-powered veterinary insights, including diet, vaccination, and care recommendations.
 
 ---
 
-
-
-# 🧬 Model Training
+# Model Training
 
 ## Training Notebooks
-```
+
+```text
 Model Training/
 ├── Buffalo_Breed.ipynb
 ├── Cow_Breed.ipynb
 ├── Buffalo_VS_Cow.ipynb
-├── mobileNetv2.ipynb
+└── mobileNetv2.ipynb
 ```
+
+## AI Models
+
+### Cow vs Buffalo Classification
+
+- MobileNetV2 (Transfer Learning)
+- Binary Classification
+
+### Cow Breed Classification
+
+- EfficientNetB0 (Fine-Tuned)
+
+Supported breeds:
+
+- Ayrshire
+- Brown Swiss
+- Holstein Friesian
+- Khillari
+- Red Sindhi
+
+### Buffalo Breed Classification
+
+- EfficientNetB0 (Fine-Tuned)
+
+Supported breeds:
+
+- Banni
+- Jaffrabadi
+- Nagpuri
+- Nili Ravi
+- Toda
+
 ---
 
-## AI Models Used
+# Training Strategy
 
-🐄 Cow vs Buffalo Model  
-- MobileNetV2 (Transfer Learning)  
-- Binary classification  
-
-🐄 Cow Breed Model  
-- EfficientNetB0 (Fine-tuned)  
-- Ayrshire, Brown Swiss, Holstein Friesian, Khillari, Red Sindhi  
-
-🐃 Buffalo Breed Model  
-- EfficientNetB0 (Fine-tuned)  
-- Banni, Jaffrabadi, Nagpuri, Nili Ravi, Toda  
+- Transfer Learning using ImageNet pretrained weights
+- Initial training with frozen base layers
+- Fine-tuning higher CNN layers
+- Data augmentation for improved robustness
+- Separate models for animal detection and breed classification
+- Learning rate optimization
 
 ---
 
-## ⚙️ Training Strategy
+# Saved Models
 
-- Transfer Learning with ImageNet pretrained weights  
-- Frozen base layers initially  
-- Fine-tuning top CNN layers for better accuracy  
-- Data augmentation for robustness  
-- Separate models for cow and buffalo breeds  
-- Optimized learning rate tuning  
-
----
-
-## 📦 Saved Models
-```
+```text
 Models/
 ├── buffalo_vs_cow_model.h5
 ├── buffalo_vs_cow_model.keras
 ├── Cow_breed.h5
 ├── Cow_breed.keras
 ├── Buffalo_breed.h5
-├── Buffalo_breed.keras
+└── Buffalo_breed.keras
 ```
+
 ---
 
-# ⚙️ Backend (FastAPI - Server.py)
+# Backend (FastAPI)
 
-Features:
-- /predict endpoint for image inference
+The backend is implemented in **Server.py**.
+
+## Features
+
+- REST API for image prediction
 - TensorFlow model loading
-- Image preprocessing using PIL + NumPy
+- Image preprocessing using PIL and NumPy
 - Two-stage prediction pipeline
-- Gemini API integration
+- Google Gemini API integration
 
-Output:
-- Animal type
-- Breed name
-- Confidence scores
-- AI-generated veterinary summary
+## API Output
+
+- Animal Type
+- Predicted Breed
+- Confidence Scores
+- AI-Generated Veterinary Summary
 
 ---
 
-# 🎨 Frontend (React.js)
-```
+# Frontend (React.js)
+
+## Project Structure
+
+```text
 src/
 ├── Components/
 │   ├── Breed_Predictor.js
-│   ├── Breed_Predictor.css
+│   └── Breed_Predictor.css
 ├── App.js
 ├── App.css
-├── index.js
+└── index.js
 ```
 
-Features:
-- Image upload + preview
-- AI prediction display
-- Confidence scores
-- Gemini-generated veterinary insights
-- Clean UI
+## Features
 
-UI Flow:
-Upload Image → Click Predict → View Results → AI Summary
+- Image upload with preview
+- Breed prediction
+- Confidence score visualization
+- AI-generated veterinary insights
+- Clean and responsive user interface
+
+## User Workflow
+
+```
+Upload Image
+      ↓
+Click Predict
+      ↓
+View Prediction
+      ↓
+Read AI Veterinary Summary
+```
 
 ---
 
-# 🌐 Public Folder
-```
+# Public Folder
+
+```text
 public/
-├── index.html
 ├── favicon.ico
+├── index.html
 ├── logo192.png
 ├── logo512.png
 ├── manifest.json
-├── robots.txt
+└── robots.txt
 ```
+
 ---
 
-# 🤖 Generative AI (Gemini)
+# Generative AI Integration
 
-After prediction, Gemini generates:
+After breed prediction, the Gemini API generates:
+
 - Breed characteristics
-- Weight & height
+- Estimated weight and height
 - Diet recommendations
-- Vaccination details
-- Veterinary care tips
+- Vaccination schedule
+- Veterinary care suggestions
 
-Optimized for Indian agriculture use cases.
-
----
-
-
-# 🌍 Real-World Impact
-
-- Smart farming systems  
-- Livestock identification  
-- Precision agriculture  
-- AI veterinary assistance  
+The generated information is tailored for Indian livestock and agriculture use cases.
 
 ---
 
-# 📁 Full Project Structure
-```
+# Real-World Applications
+
+- Smart Farming
+- Livestock Identification
+- Precision Agriculture
+- AI-Assisted Veterinary Support
+- Animal Breed Recognition
+- Agricultural Decision Support Systems
+
+---
+
+# Project Structure
+
+```text
 project-root/
 ├── Model Training/
 ├── Models/
@@ -161,61 +206,104 @@ project-root/
 ├── Server.py
 ├── package.json
 ├── package-lock.json
-├── .gitignore
+└── .gitignore
 ```
----
-# ⚙️ How to Setup & Use
-
-This project has two parts:
-- ⚡ Backend (FastAPI + AI Models)
-- 🎨 Frontend (React)
 
 ---
 
-#  1. Clone the Repository
+# Setup & Installation
+
+This project consists of two components:
+
+- Backend (FastAPI)
+- Frontend (React.js)
+
+---
+
+## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Pavan-Kumar-2095/Bovine_Breed_Classification/
-cd your-repo-name
+git clone https://github.com/Pavan-Kumar-2095/Bovine_Breed_Classification.git
+cd Bovine_Breed_Classification
 ```
-#   2. Backend Setup (FastAPI)
-Install dependencies
+
+---
+
+## 2. Backend Setup
+
+### Install Dependencies
+
 ```bash
 pip install fastapi uvicorn tensorflow numpy pillow requests python-dotenv google-generativeai
 ```
 
+### Configure Environment Variables
 
-#  3.Add environment variables
+Create a `.env` file in the project root:
 
-Create a .env file in the root directory:
-```
+```env
 GEMINI_API_KEY=your_api_key_here
 ```
-# Run backend server
+
+### Run the Backend
+
 ```bash
 python Server.py
 ```
 
-or <br> 
+or
+
 ```bash
 uvicorn Server:app --reload --host 0.0.0.0 --port 5000
 ```
-Backend will run at:
+
+The backend will be available at:
+
 ```
 http://localhost:5000
 ```
 
-#  4. Frontend Setup (React)
-Install dependencies
+---
+
+## 3. Frontend Setup
+
+### Install Dependencies
+
 ```bash
 npm install
 ```
 
-## Start frontend
+### Start the Development Server
+
 ```bash
 npm start
 ```
-Frontend will run at:
+
+The frontend will be available at:
+
 ```
 http://localhost:3000
+```
+
+---
+
+# System Workflow
+
+```text
+Input Image
+      │
+      ▼
+Cow vs Buffalo Classification
+      │
+      ▼
+Breed Classification
+      │
+      ▼
+Confidence Score Generation
+      │
+      ▼
+Gemini AI Veterinary Analysis
+      │
+      ▼
+Prediction Results Display
 ```
